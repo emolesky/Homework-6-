@@ -1,27 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Merge
+namespace Removing
 {
-    public class Solution
+    class Solution
     {
-        public void Merge(int[] nums1, int m, int[] nums2, int n)
-        {
-            int p1 = m - 1;
-            int p2 = n - 1;
-            int p3 = m + n - 1;
-            int i = p3;
+        private int[] nums = [];
+        private int val = 0;
+        private int i;
 
-            while (p2 >= 0)
+        public int[] Nums
+        {
+            get { return this.Nums; }
+            set {  this.Nums = value; }
+        }
+        public int Val
+        {
+            get { return this.Val; }
+            set {this.Val = value; }
+        }
+
+        public Solution(int[] nums, int val)
+        {
+            this.Nums= nums;
+            this.Val = val;
+
+        }
+
+        public int RemoveElement(int[] nums, int val)
+        {
+            int k = 0;
+            
+
+            for (int i = 0; i < nums.Length; i++);
             {
-                if (p1 >= 0 && nums1[p1] > nums2[p2])
-                    nums1[i--] = nums1[p1--];
-                else
-                    nums1[i--] = nums2[p2--];
+                if (nums[i] != val)
+                {
+                    nums[k] = nums[i];
+                    k++;
+                }
             }
+            return k;
         }
     }
 }

@@ -1,18 +1,16 @@
-﻿namespace Merge
+﻿namespace Removing
 {
-    public class Program
+     public class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
-            int[] nums1 = [0];
-            int m = 0;
-            int[] nums2 = [1];
-            int n = 1;
+            int[] nums = [3, 2, 2, 3];
+            int val = 3;
 
-            Solution solution = new Solution();
-            solution.Merge(nums1, m, nums2, n);
+            Solution aSolution = new Solution( nums, val);
+            int result = aSolution.RemoveElement(nums, val);
 
-            Console.WriteLine("Merged array: " + string.Join(", ", nums1));
+            Console.WriteLine(result);
         }
     }
 }
