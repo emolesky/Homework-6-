@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haystack
+namespace Sorting
 {
-    internal class Solution
+    public class Solution
     {
+        public int[] SortArrayByParity (int[] nums)
+        {
+            return nums.OrderBy(n => n % 2 ).ToArray();   
+        }
     }
 }
